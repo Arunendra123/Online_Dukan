@@ -22,7 +22,7 @@ public class CategoryTest {
 	}
 
 	@Test
-	public void addCategory() {
+	public void addCategoryTest() {
 		Category category=new Category();
 		category.setCategoryName("T-Shirt");
 		category.setCategoryDescription("All Variety t-shirt");
@@ -30,7 +30,7 @@ public class CategoryTest {
 	}
 	
 	@Test
-	public void deleteCategory() {
+	public void deleteCategoryTest() {
 		Category category=new Category();
 		category.setCategoryName("T-Shirt");
 		category.setCategoryDescription("All Variety t-shirt");

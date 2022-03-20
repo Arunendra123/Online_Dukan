@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.model.Category;
+import com.model.Product;
 
 @Configuration
 @EnableTransactionManagement
@@ -38,6 +39,7 @@ public class DBConfig {
 		LocalSessionFactoryBuilder localSessionFactoryBuilder=new LocalSessionFactoryBuilder(getPostgressDataSource());
 		localSessionFactoryBuilder.addProperties(properties);
 		localSessionFactoryBuilder.addAnnotatedClass(Category.class);
+		localSessionFactoryBuilder.addAnnotatedClass(Product.class);
 		System.out.println("-------------------Session Factory created---------------");
 		return localSessionFactoryBuilder.buildSessionFactory();
 	}
