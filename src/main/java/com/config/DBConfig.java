@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.model.Category;
 import com.model.Product;
+import com.model.Supplier;
+import com.model.UserDetails;
 
 @Configuration
 @EnableTransactionManagement
@@ -38,8 +40,14 @@ public class DBConfig {
 		properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 		LocalSessionFactoryBuilder localSessionFactoryBuilder=new LocalSessionFactoryBuilder(getPostgressDataSource());
 		localSessionFactoryBuilder.addProperties(properties);
+		
+		//----------------------------------------------------------------------------------------------------------
 		localSessionFactoryBuilder.addAnnotatedClass(Category.class);
 		localSessionFactoryBuilder.addAnnotatedClass(Product.class);
+		localSessionFactoryBuilder.addAnnotatedClass(Supplier.class);
+		localSessionFactoryBuilder.addAnnotatedClass(UserDetails.class);
+		//----------------------------------------------------------------------------------------------------------
+		
 		System.out.println("-------------------Session Factory created---------------");
 		return localSessionFactoryBuilder.buildSessionFactory();
 	}
